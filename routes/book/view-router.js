@@ -3,8 +3,7 @@ const router = express.Router()
 const moment = require('moment')
 const { error, chgStatus, relPath, isImg } = require('../../modules/util')
 const { pool } = require('../../modules/mysql-init')
-const { ERR_NOT_FOUND, TITLE_LIST, DESC_LIST } = require('../../modules/lang-init')('ko')
-
+const { ERR_NOT_FOUND, TITLE_LIST, DESC_LIST } = require('../../modules/lang-init')
 router.get('/:idx', async (req, res, next) => {
 	let sql, values
 	try {

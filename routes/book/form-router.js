@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const { error } = require('../../modules/util')
 const { pool } = require('../../modules/mysql-init')
-const { ERR_NOT_FOUND, TITLE_LIST, DESC_LIST } = require('../../modules/lang-init')('ko')
+const { ERR_NOT_FOUND, TITLE_LIST, DESC_LIST } = require('../../modules/lang-init')
 
 router.get('/', (req, res, next) => {
 	const title = '도서 등록'

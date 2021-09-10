@@ -18,6 +18,7 @@ app.locals.tabTitle = 'Express 게시판'
 
 
 /*************** middleware ***************/
+
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(methodInit())
@@ -29,6 +30,10 @@ app.use('/uploads', express.static(path.join(__dirname, 'storages')))
 
 
 /*************** router init **************/
+app.use((req,res,next)=>{
+    process.env.MY_LANG = req.query.lang
+    next();
+})
 const bookRouter = require('./routes/book')
 
 app.use('/book', bookRouter)
