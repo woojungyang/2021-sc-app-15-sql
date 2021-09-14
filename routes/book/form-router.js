@@ -1,10 +1,11 @@
 const express = require('express')
 const router = express.Router()
-const { error } = require('../../modules/util')
+const { error, relPath } = require('../../modules/util')
 const { pool } = require('../../modules/mysql-init')
-const { ERR_NOT_FOUND, TITLE_LIST, DESC_LIST } = require('../../modules/lang-init')
+const { NO_EXIST } = require('../../modules/lang-init')
 
 router.get('/', (req, res, next) => {
+	req.app.locals.PAGE = 'CREATE'
 	const title = '도서 등록'
 	const description = '등록할 도서를 아래에서 입력하세요.'
 	const js = 'book/form'
@@ -14,6 +15,7 @@ router.get('/', (req, res, next) => {
 })
 
 router.get('/:idx', async (req, res, next) => {
+	req.app.locals.PAGE = 'UPDATE'
 	try {
 		const sql = `
 		SELECT B.*, 
@@ -25,11 +27,14 @@ router.get('/:idx', async (req, res, next) => {
 		WHERE B.idx=?`
 		const values = [req.params.idx]
 		const [[book]] = await pool.execute(sql, values)
-		if (book){
+
+		if(book) {
 			const title = '도서 수정'
 			const description = '수정할 도서 내용을 아래에서 변경하세요.'
 			const js = 'book/form'
 			const css = 'book/form'
+			book.cover = book.ori ? { ori: book.ori, path: relPath(book.name), idx: book.fid } : null
+			book.upfile = book.ori2 ? { ori: book.ori2, idx: book.fid2 } : null
 			res.status(200).render('book/form', { title, description, css, js, book })
 		}
 		else  next(error(400, NO_EXIST))

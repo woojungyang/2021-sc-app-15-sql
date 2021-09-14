@@ -18,10 +18,9 @@ app.locals.tabTitle = 'Express 게시판'
 
 
 /*************** middleware ***************/
-
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
-app.use(methodInit())
+app.use(methodInit())	// method-override
 
 
 /*************** static init **************/
@@ -30,13 +29,12 @@ app.use('/uploads', express.static(path.join(__dirname, 'storages')))
 
 
 /*************** router init **************/
-app.use((req,res,next)=>{
-    process.env.MY_LANG = req.query.lang
-    next();
-})
+const langMW = require('./middlewares/lang-mw')
 const bookRouter = require('./routes/book')
 
+app.use(langMW)
 app.use('/book', bookRouter)
+
 
 
 /**************** error init **************/
