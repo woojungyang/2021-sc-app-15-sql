@@ -1,9 +1,11 @@
 const path = require('path')
 const fs = require('fs-extra')
 const express = require('express')
+const createError = require('http-errors')
 const router = express.Router()
-const { error, moveFile } = require('../../modules/util')
+const {  moveFile } = require('../../modules/util')
 const { pool } = require('../../modules/mysql-init')
+const createError = require('http-errors')
 
 router.delete('/', async (req, res, next) => {
 	let sql
@@ -25,7 +27,7 @@ router.delete('/', async (req, res, next) => {
 		res.redirect(`/${req.lang}/book`)
 	}
 	catch(err) {
-		next(error(500, err))
+		next(createError(err))
 	}
 })
 

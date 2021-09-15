@@ -32,11 +32,12 @@ router.get('/:idx', async (req, res, next) => {
 
 			res.status(200).render('book/view', { css, js, book })
 		}
-		else next(error(400, NO_EXIST))
+		else next(createError(400, NO_EXIST))
 	}
 	catch(err) {
-		next(error(500, err))
+		next(createError(err))
 	}
 })
+
 
 module.exports = router
