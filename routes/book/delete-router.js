@@ -5,7 +5,6 @@ const createError = require('http-errors')
 const router = express.Router()
 const {  moveFile } = require('../../modules/util')
 const { pool } = require('../../modules/mysql-init')
-const createError = require('http-errors')
 
 router.delete('/', async (req, res, next) => {
 	let sql
