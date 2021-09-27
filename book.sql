@@ -23,37 +23,22 @@ CREATE TABLE IF NOT EXISTS `books` (
   `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '도서제목 255자 이하',
   `writer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '저자(255)',
   `content` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci COMMENT '도서요약설명',
-  `cover` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '표지사진',
-  `createAt` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '등록일',
-  `status` enum('0','1','2','3') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT '1' COMMENT '현재 상태(0:절판,1:판매중,2:판매예정,3:삭제)',
-  PRIMARY KEY (`idx`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `createdAt` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '등록일',
+  `status` enum('0','1','2','3') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT '1' COMMENT '현재 상태(0:삭제,1:판매중,2:판매예정,3:절판)',
+  `fidx` int unsigned NOT NULL,
+  PRIMARY KEY (`idx`),
+  KEY `fidx` (`fidx`),
+  CONSTRAINT `FK_books_users` FOREIGN KEY (`fidx`) REFERENCES `users` (`idx`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
--- 테이블 데이터 book.books:~15 rows (대략적) 내보내기
+-- 테이블 데이터 book.books:~0 rows (대략적) 내보내기
 DELETE FROM `books`;
 /*!40000 ALTER TABLE `books` DISABLE KEYS */;
-INSERT INTO `books` (`idx`, `title`, `writer`, `content`, `cover`, `createAt`, `status`) VALUES
-	(1, '홍길동전', '허균', '아버지를 아버지라', NULL, '2021-09-02 16:43:34', '1'),
-	(2, '해님달님', '', '떡하나 주면 안잡아 먹지', NULL, '2021-09-02 17:48:38', '1'),
-	(3, '심청전', '아버지', '공양미 삼백석을', NULL, '2021-09-08 10:46:42', '1'),
-	(4, 'ㅇㅇㅇ', 'ㅇㄴㄹㅈㄷ', '', NULL, '2021-09-08 12:10:54', '3'),
-	(5, 'ㅇㄹㄹㅇㄴㅁㄹ', 'ㄴㅁㅇㄹㄴㅁ', 'ㄴㅁㅇㄻㄴㄹ', NULL, '2021-09-08 13:14:05', '3'),
-	(6, 'vdfdg', 'sfgf', 'dfgfdsg', NULL, '2021-09-08 14:54:17', '3'),
-	(7, '콩쥐팥쥐', '콩쥐', '가만안둬', NULL, '2021-09-08 14:54:39', '1'),
-	(8, '흥부와놀부', '흥부', '배고프구나', NULL, '2021-09-08 14:54:51', '1'),
-	(9, '강아지똥', '강아지똥', '누가 싼똥인가', NULL, '2021-09-08 14:55:18', '1'),
-	(10, '별주부전', '토끼', '간을 안줄꺼야', NULL, '2021-09-08 14:55:47', '1'),
-	(11, '토끼와거북이', '거북이', '같이가자좀', NULL, '2021-09-08 14:56:08', '1'),
-	(12, '시골쥐와서울쥐', '서울쥐', '', NULL, '2021-09-08 14:56:39', '1'),
-	(13, 'ddd', 'sfsdf', 'sf', NULL, '2021-09-08 16:40:03', '1'),
-	(14, 'ddd', 'sfsdf', 'sf', NULL, '2021-09-08 18:49:36', '1'),
-	(15, '테스트', '테스트', '테스트', NULL, '2021-09-08 20:18:27', '1'),
-	(16, 'ddd', 'fff', 'dfggdg', NULL, '2021-09-09 12:04:40', '1');
 /*!40000 ALTER TABLE `books` ENABLE KEYS */;
 
 -- 테이블 book.files 구조 내보내기
 CREATE TABLE IF NOT EXISTS `files` (
-  `idx` int unsigned NOT NULL AUTO_INCREMENT,
+  `idx` int NOT NULL AUTO_INCREMENT,
   `fidx` int NOT NULL,
   `oriname` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `savename` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
@@ -65,19 +50,46 @@ CREATE TABLE IF NOT EXISTS `files` (
   PRIMARY KEY (`idx`),
   KEY `fidx` (`fidx`),
   CONSTRAINT `FK_files_books` FOREIGN KEY (`fidx`) REFERENCES `books` (`idx`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
--- 테이블 데이터 book.files:~4 rows (대략적) 내보내기
+-- 테이블 데이터 book.files:~0 rows (대략적) 내보내기
 DELETE FROM `files`;
 /*!40000 ALTER TABLE `files` DISABLE KEYS */;
-INSERT INTO `files` (`idx`, `fidx`, `oriname`, `savename`, `mimetype`, `size`, `createdAt`, `fieldname`, `status`) VALUES
-	(1, 3, 'png.png', '210908_a4e74419-7083-4507-ace4-8322fda96236.png', 'image/png', 2742, '2021-09-08 10:46:42', 'C', '1'),
-	(2, 4, '구직준비도검사결과_양우정.pdf', '210908_acbeef96-822d-4285-b3fe-444a3f53da5d.pdf', 'application/pdf', 90595, '2021-09-08 12:10:54', 'U', '1'),
-	(3, 11, 'logo.png', '210908_f620d93e-7372-44d9-b28a-92d371e60716.png', 'image/png', 25272, '2021-09-08 14:56:08', 'C', '1'),
-	(4, 15, 'logo.png', '210908_9783f331-d0a5-4864-ab2b-3571c5e0d478.png', 'image/png', 25272, '2021-09-08 20:18:27', 'C', '1'),
-	(5, 16, 'logo.png', '210909_7a119fc8-97bd-45ca-b4a2-b62423a0e349.png', 'image/png', 25272, '2021-09-09 12:04:40', 'C', '1'),
-	(6, 16, '직업선호도검사(S형)결과_양우정.pdf', '210909_da777a1d-df33-4bf5-8bc4-fd5b2017380c.pdf', 'application/pdf', 137877, '2021-09-09 12:04:40', 'U', '1');
 /*!40000 ALTER TABLE `files` ENABLE KEYS */;
+
+-- 테이블 book.sessions 구조 내보내기
+CREATE TABLE IF NOT EXISTS `sessions` (
+  `session_id` varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `expires` int unsigned NOT NULL,
+  `data` mediumtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin,
+  PRIMARY KEY (`session_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- 테이블 데이터 book.sessions:~3 rows (대략적) 내보내기
+DELETE FROM `sessions`;
+/*!40000 ALTER TABLE `sessions` DISABLE KEYS */;
+INSERT INTO `sessions` (`session_id`, `expires`, `data`) VALUES
+	('7Mb3iZhxQOOqAm8u7SXUHOszUn5QYK2I', 1632812879, '{"cookie":{"originalMaxAge":null,"expires":null,"secure":false,"httpOnly":true,"path":"/"}}'),
+	('kLIxUkTk7Ax3ixCdwgweOnTCDChXb-kE', 1632818968, '{"cookie":{"originalMaxAge":null,"expires":null,"secure":false,"httpOnly":true,"path":"/"},"user":{"idx":3,"userid":"woojungyang2","username":"양우정","email":"blossom1113@gmail.com","status":"2"}}'),
+	('sGJ5aED300UwrE2gL6YZFWGVUGxbOYlJ', 1632812881, '{"cookie":{"originalMaxAge":null,"expires":null,"secure":false,"httpOnly":true,"path":"/"}}');
+/*!40000 ALTER TABLE `sessions` ENABLE KEYS */;
+
+-- 테이블 book.users 구조 내보내기
+CREATE TABLE IF NOT EXISTS `users` (
+  `idx` int unsigned NOT NULL AUTO_INCREMENT,
+  `userid` varchar(24) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `passwd` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `username` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `createdAt` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `status` enum('0','1','2','3','4','5','6','7','8','9') NOT NULL DEFAULT '2' COMMENT '0:탈퇴 , 1:유효, 2:회원, 3:VIP, 9:관리자',
+  PRIMARY KEY (`idx`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+-- 테이블 데이터 book.users:~0 rows (대략적) 내보내기
+DELETE FROM `users`;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;

@@ -1,13 +1,13 @@
 .form-control:focus {color: unset;background-color: unset;border-color: #045da7; outline: unset;box-shadow: unset;}
-
-.form-control.error, .form-control.error:focus { border-color: rgb(187, 8, 8);}
+.form-control.active, .form-control.active:focus {border-color: #005499;}
+.form-control.error, .form-control.error:focus { border-color: rgb(90, 31, 31);}
 
 
 .form-wrapper {}
 .form-wrapper table {width: 100%; border: 1px solid #ddd;}
 .form-wrapper table td {padding: .75em; border-bottom: 1px solid #dfdfdf;}
-.form-wrapper table td.title {width: 160px;}
-.form-wrapper table textarea {height: 180px;}
+.form-wrapper table td.title {width: 180px;}
+
 .form-wrapper table td.require::after {display: inline-block; content: '*'; color: #f10; margin-left: .5em; font-size: 1.25em;}
 
 

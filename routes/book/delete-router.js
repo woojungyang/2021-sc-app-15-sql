@@ -3,10 +3,11 @@ const fs = require('fs-extra')
 const express = require('express')
 const createError = require('http-errors')
 const router = express.Router()
-const {  moveFile } = require('../../modules/util')
+const { moveFile } = require('../../modules/util')
 const { pool } = require('../../modules/mysql-init')
+const { isUser, isGuest, isMyBook } = require('../../middlewares/auth-mw')
 
-router.delete('/', async (req, res, next) => {
+router.delete('/', isUser, isMyBook('body'), async (req, res, next) => {
 	let sql
 	try {
 		// sql = "DELETE FROM books WHERE idx=?"
