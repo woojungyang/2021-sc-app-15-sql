@@ -6,15 +6,20 @@ const path = require('path')
 const passport = require('passport')
 const passportModule = require('./passport')
 
-const langMW = require('./middlewares/lang-mw')
-const methodInit = require('./middlewares/method-mw')
+const method = require('./middlewares/method-mw')
 const logger = require('./middlewares/morgan-mw')
 const session = require('./middlewares/session-mw')
 const locals = require('./middlewares/locals-mw')
+const langMW = require('./middlewares/lang-mw')
 
 
 /*************** server init **************/
 require('./modules/server-init')(app, process.env.PORT)
+
+
+/*************** static init **************/
+app.use('/', express.static(path.join(__dirname, 'public')))
+app.use('/uploads', express.static(path.join(__dirname, 'storages')))
 
 
 /************** view engine ***************/
@@ -23,13 +28,11 @@ app.set('views', './views')
 app.locals.pretty = true
 
 
-
 /*************** middleware ***************/
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
-app.use(methodInit())	// method-override
+app.use(method())
 app.use(session(app))
-
 
 
 /**************** passport ****************/
@@ -38,14 +41,8 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 
-/**************** locals ****************/
+/***************** locals *****************/
 app.use(locals)
-
-
-
-/*************** static init **************/
-app.use('/', express.static(path.join(__dirname, 'public')))
-app.use('/uploads', express.static(path.join(__dirname, 'storages')))
 
 
 /*************** logger init **************/
@@ -65,14 +62,12 @@ app.use('/auth', authRouter)
 app.use('/api/auth', apiAuthRouter)
 
 
-
 /**************** error init **************/
 const _404Router = require('./routes/error/404-router')
 const _500Router = require('./routes/error/500-router')
 const { Passport } = require('passport')
+const { nextTick } = require('process')
 
 app.use(_404Router)
 app.use(_500Router)
-
-
 
