@@ -1,0 +1,180 @@
+Updatecheck<|||>3<|||>1
+DoUsageStatistics<|||>3<|||>1
+UpdatecheckLastrun<|||>1<|||>2021-09-26 23:21:29
+LastUsageStatisticCall<|||>1<|||>2021-09-01 16:13:56
+LastSessions<|||>1<|||>localhost
+LastActiveSession<|||>1<|||>localhost
+SessionManager_WindowWidth<|||>3<|||>984
+SessionManager_WindowHeight<|||>3<|||>664
+SessionManager_WindowLeft<|||>3<|||>489
+SessionManager_WindowTop<|||>3<|||>40
+ColWidths_connform.ListSessions<|||>1<|||>163,50,50,50,50,50,10
+ColsVisible_connform.ListSessions<|||>1<|||>0,1,4,6
+ColPositions_connform.ListSessions<|||>1<|||>0,1,2,3,4,5,6
+ColSort_connform.ListSessions<|||>1<|||>0,0
+MemoEditorWidth<|||>3<|||>560
+ColWidths_frmTableEditor.listColumns<|||>1<|||>39,84,69,98,79,80,72,144,292,140,100,100
+ColsVisible_frmTableEditor.listColumns<|||>1<|||>0,1,2,3,4,5,6,7,8,9,10,11
+ColPositions_frmTableEditor.listColumns<|||>1<|||>0,1,2,3,4,5,6,7,8,9,10,11
+ColSort_frmTableEditor.listColumns<|||>1<|||>-1,0
+ColWidths_frmTableEditor.treeIndexes<|||>1<|||>1294,100,80
+ColsVisible_frmTableEditor.treeIndexes<|||>1<|||>0,1,2
+ColPositions_frmTableEditor.treeIndexes<|||>1<|||>0,1,2
+ColSort_frmTableEditor.treeIndexes<|||>1<|||>-1,0
+ColWidths_frmTableEditor.listForeignKeys<|||>1<|||>1032,80,100,96,104,80
+ColsVisible_frmTableEditor.listForeignKeys<|||>1<|||>0,1,2,3,4,5
+ColPositions_frmTableEditor.listForeignKeys<|||>1<|||>0,1,2,3,4,5
+ColSort_frmTableEditor.listForeignKeys<|||>1<|||>-1,0
+ColWidths_frmTableEditor.listCheckConstraints<|||>1<|||>200,1292
+ColsVisible_frmTableEditor.listCheckConstraints<|||>1<|||>0,1
+ColPositions_frmTableEditor.listCheckConstraints<|||>1<|||>0,1
+ColSort_frmTableEditor.listCheckConstraints<|||>1<|||>-1,0
+sqloutheight<|||>3<|||>93
+MainWinMaximized<|||>3<|||>1
+ColWidths_MainForm.ListDatabases<|||>1<|||>150,80,50,50,50,50,50,50,50,50,120
+ColsVisible_MainForm.ListDatabases<|||>1<|||>0,1,2,3,4,5,6,7,8,9,10
+ColPositions_MainForm.ListDatabases<|||>1<|||>0,1,2,3,4,5,6,7,8,9,10
+ColSort_MainForm.ListDatabases<|||>1<|||>0,0
+ColWidths_MainForm.ListVariables<|||>1<|||>160,200,428
+ColsVisible_MainForm.ListVariables<|||>1<|||>0,1,2
+ColPositions_MainForm.ListVariables<|||>1<|||>0,1,2
+ColSort_MainForm.ListVariables<|||>1<|||>0,0
+ColWidths_MainForm.ListStatus<|||>1<|||>160,428,100,100
+ColsVisible_MainForm.ListStatus<|||>1<|||>0,1,2,3
+ColPositions_MainForm.ListStatus<|||>1<|||>0,1,2,3
+ColSort_MainForm.ListStatus<|||>1<|||>0,0
+ColWidths_MainForm.ListProcesses<|||>1<|||>70,80,80,80,80,50,50,57
+ColsVisible_MainForm.ListProcesses<|||>1<|||>0,1,2,3,4,5,6,7
+ColPositions_MainForm.ListProcesses<|||>1<|||>0,1,2,3,4,5,6,7
+ColSort_MainForm.ListProcesses<|||>1<|||>0,1
+ColWidths_MainForm.ListCommandStats<|||>1<|||>120,100,100,100,368
+ColsVisible_MainForm.ListCommandStats<|||>1<|||>0,1,2,3,4
+ColPositions_MainForm.ListCommandStats<|||>1<|||>0,1,2,3,4
+ColSort_MainForm.ListCommandStats<|||>1<|||>1,1
+ColWidths_MainForm.ListTables<|||>1<|||>120,70,70,120,120,70,100,50,70,70,70,70,70,90,120,70,70,70,50
+ColsVisible_MainForm.ListTables<|||>1<|||>0,1,2,3,4,5,6,18
+ColPositions_MainForm.ListTables<|||>1<|||>0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18
+ColSort_MainForm.ListTables<|||>1<|||>0,0
+FavoriteObjectsOnly<|||>3<|||>0
+ColWidths_UserManagerForm.listUsers<|||>1<|||>96,80
+ColsVisible_UserManagerForm.listUsers<|||>1<|||>0,1
+ColPositions_UserManagerForm.listUsers<|||>1<|||>0,1
+ColSort_UserManagerForm.listUsers<|||>1<|||>0,0
+MainWinLeft<|||>3<|||>974
+MainWinTop<|||>3<|||>14
+MainWinWidth<|||>3<|||>930
+MainWinHeight<|||>3<|||>1040
+Usermanager_WindowWidth<|||>3<|||>741
+Usermanager_WindowHeight<|||>3<|||>499
+CreateDbCollation<|||>1<|||>utf8_general_ci
+ExportSQL_CreateDatabases<|||>3<|||>1
+ExportSQL_CreateTables<|||>3<|||>1
+ExportSQL_Filenames<|||>1<|||>C:\양우정_실습\집\15.sql\book.sql<{{{><}}}>
+ExportSQL_DataHow<|||>3<|||>1
+querymemoheight<|||>3<|||>198
+MainWinOnMonitor<|||>3<|||>1
+FileDialogEncoding_MainForm<|||>3<|||>0
+MemoEditorHeight<|||>3<|||>358
+dbtreewidth<|||>3<|||>347
+SQLFile0<|||>1<|||>C:\Users\dnwjd\AppData\Roaming\HeidiSQL\Backups\query-tab-2021-09-17_00-03-00-063.sql
+SQLFile1<|||>1<|||>C:\Users\dnwjd\OneDrive\바탕 화면\ㅇ.sql
+DateTimeEditor_CursorPos_Type4<|||>3<|||>0
+Servers\127.0.0.1-sample\SessionCreated<|||>1<|||>2021-09-02 12:06:08
+Servers\127.0.0.1-sample\Host<|||>1<|||>127.0.0.1
+Servers\127.0.0.1-sample\WindowsAuth<|||>3<|||>0
+Servers\127.0.0.1-sample\CleartextPluginEnabled<|||>3<|||>0
+Servers\127.0.0.1-sample\User<|||>1<|||>sample
+Servers\127.0.0.1-sample\Password<|||>1<|||>3939393939399
+Servers\127.0.0.1-sample\LoginPrompt<|||>3<|||>0
+Servers\127.0.0.1-sample\Port<|||>1<|||>3306
+Servers\127.0.0.1-sample\NetType<|||>3<|||>0
+Servers\127.0.0.1-sample\Compressed<|||>3<|||>0
+Servers\127.0.0.1-sample\LocalTimeZone<|||>3<|||>0
+Servers\127.0.0.1-sample\QueryTimeout<|||>3<|||>30
+Servers\127.0.0.1-sample\KeepAlive<|||>3<|||>20
+Servers\127.0.0.1-sample\FullTableStatus<|||>3<|||>1
+Servers\127.0.0.1-sample\Databases<|||>1<|||>
+Servers\127.0.0.1-sample\Library<|||>1<|||>libmariadb.dll
+Servers\127.0.0.1-sample\Comment<|||>1<|||>
+Servers\127.0.0.1-sample\StartupScriptFilename<|||>1<|||>
+Servers\127.0.0.1-sample\TreeBackground<|||>3<|||>536870911
+Servers\127.0.0.1-sample\SSHtunnelHost<|||>1<|||>
+Servers\127.0.0.1-sample\SSHtunnelHostPort<|||>3<|||>22
+Servers\127.0.0.1-sample\SSHtunnelUser<|||>1<|||>
+Servers\127.0.0.1-sample\SSHtunnelPassword<|||>1<|||>5
+Servers\127.0.0.1-sample\SSHtunnelTimeout<|||>3<|||>4
+Servers\127.0.0.1-sample\SSHtunnelPrivateKey<|||>1<|||>
+Servers\127.0.0.1-sample\SSHtunnelPort<|||>3<|||>3307
+Servers\127.0.0.1-sample\SSL_Active<|||>3<|||>0
+Servers\127.0.0.1-sample\SSL_Key<|||>1<|||>
+Servers\127.0.0.1-sample\SSL_Cert<|||>1<|||>
+Servers\127.0.0.1-sample\SSL_CA<|||>1<|||>
+Servers\127.0.0.1-sample\SSL_Cipher<|||>1<|||>
+Servers\127.0.0.1-sample\IgnoreDatabasePattern<|||>1<|||>
+Servers\127.0.0.1-sample\LogFileDdl<|||>3<|||>0
+Servers\127.0.0.1-sample\LogFileDml<|||>3<|||>0
+Servers\127.0.0.1-sample\LogFilePath<|||>1<|||>C:\Users\dnwjd\AppData\Roaming\HeidiSQL\Logs\%session\%db\%y%m%d.sql
+Servers\127.0.0.1-sample\ServerVersionFull<|||>1<|||>8.0.26 - MySQL Community Server - GPL
+Servers\127.0.0.1-sample\ConnectCount<|||>3<|||>1
+Servers\127.0.0.1-sample\ServerVersion<|||>3<|||>80026
+Servers\127.0.0.1-sample\LastConnect<|||>1<|||>2021-09-02 12:06:40
+Servers\127.0.0.1-sample\lastUsedDB<|||>1<|||>sample
+Servers\localhost\SessionCreated<|||>1<|||>2021-09-01 16:14:23
+Servers\localhost\Host<|||>1<|||>localhost
+Servers\localhost\WindowsAuth<|||>3<|||>1
+Servers\localhost\CleartextPluginEnabled<|||>3<|||>0
+Servers\localhost\User<|||>1<|||>root
+Servers\localhost\Password<|||>1<|||>3838383838388
+Servers\localhost\LoginPrompt<|||>3<|||>0
+Servers\localhost\Port<|||>1<|||>3306
+Servers\localhost\NetType<|||>3<|||>0
+Servers\localhost\Compressed<|||>3<|||>0
+Servers\localhost\LocalTimeZone<|||>3<|||>0
+Servers\localhost\QueryTimeout<|||>3<|||>30
+Servers\localhost\KeepAlive<|||>3<|||>20
+Servers\localhost\FullTableStatus<|||>3<|||>1
+Servers\localhost\Databases<|||>1<|||>
+Servers\localhost\Library<|||>1<|||>libmariadb.dll
+Servers\localhost\Comment<|||>1<|||>
+Servers\localhost\StartupScriptFilename<|||>1<|||>
+Servers\localhost\TreeBackground<|||>3<|||>536870911
+Servers\localhost\SSHtunnelHost<|||>1<|||>
+Servers\localhost\SSHtunnelHostPort<|||>3<|||>22
+Servers\localhost\SSHtunnelUser<|||>1<|||>
+Servers\localhost\SSHtunnelPassword<|||>1<|||>3
+Servers\localhost\SSHtunnelTimeout<|||>3<|||>4
+Servers\localhost\SSHtunnelPrivateKey<|||>1<|||>
+Servers\localhost\SSHtunnelPort<|||>3<|||>3307
+Servers\localhost\SSL_Active<|||>3<|||>0
+Servers\localhost\SSL_Key<|||>1<|||>
+Servers\localhost\SSL_Cert<|||>1<|||>
+Servers\localhost\SSL_CA<|||>1<|||>
+Servers\localhost\SSL_Cipher<|||>1<|||>
+Servers\localhost\IgnoreDatabasePattern<|||>1<|||>
+Servers\localhost\LogFileDdl<|||>3<|||>0
+Servers\localhost\LogFileDml<|||>3<|||>0
+Servers\localhost\LogFilePath<|||>1<|||>C:\Users\dnwjd\AppData\Roaming\HeidiSQL\Logs\%session\%db\%y%m%d.sql
+Servers\localhost\ServerVersionFull<|||>1<|||>8.0.26 - MySQL Community Server - GPL
+Servers\localhost\ConnectCount<|||>3<|||>35
+Servers\localhost\ServerVersion<|||>3<|||>80026
+Servers\localhost\LastConnect<|||>1<|||>2021-09-27 18:11:40
+Servers\localhost\lastUsedDB<|||>1<|||>book
+Servers\localhost\RefusedCount<|||>3<|||>12
+Servers\localhost\board|\MemoEditorHighlighter_title<|||>1<|||>
+Servers\localhost\board|\MemoEditorHighlighter_viewCount<|||>1<|||>
+Servers\localhost\book|\MemoEditorHighlighter_idx<|||>1<|||>
+Servers\localhost\book|books\MemoEditorHighlighter_cover<|||>1<|||>
+Servers\localhost\book|books\Sort<|||>1<|||>0_idx|
+Servers\localhost\book|users\MemoEditorHighlighter_idx<|||>1<|||>
+Servers\localhost\book|users\MemoEditorHighlighter_status<|||>1<|||>
+Servers\localhost\book|users\Sort<|||>1<|||>0_idx|
+Servers\localhost\QueryHistory\1<|||>1<|||>2021-09-02 16:41:27|book|547|DELETE FROM books;
+Servers\localhost\QueryHistory\2<|||>1<|||>2021-09-08 17:57:01|book|0|SELECT * FROM books;
+Servers\localhost\QueryHistory\3<|||>1<|||>2021-09-08 18:17:16|book|16|SELECT * FROM books;<{{{><}}}><{{{><}}}>SELECT B.*, F.* FROM books B LEFT JOIN files F ON B.idx = F.fidx;
+Servers\localhost\QueryHistory\4<|||>1<|||>2021-09-08 18:17:25|book|0|SELECT * FROM books;<{{{><}}}><{{{><}}}>SELECT B.*, F.* FROM books B LEFT JOIN files F ON B.idx = F.fidX;
+Servers\localhost\QueryHistory\5<|||>1<|||>2021-09-09 09:32:30|book|31|SELECT * FROM books;<{{{><}}}><{{{><}}}>SELECT B.*, F.savename, F.fieldname<{{{><}}}>		FROM books B LEFT JOIN files F <{{{><}}}>		ON B.idx = F.fidx <{{{><}}}>		WHERE B.status < 3<{{{><}}}>		ORDER BY B.idx DESC LIMIT 0, 5;
+Servers\localhost\QueryHistory\6<|||>1<|||>2021-09-10 09:39:03|book|204|SELECT * FROM books;<{{{><}}}><{{{><}}}>SELECT B.*, F.savename, F.fieldname<{{{><}}}>		FROM books B LEFT JOIN files F <{{{><}}}>		ON B.idx = F.fidx <{{{><}}}>		WHERE B.status < 3<{{{><}}}>		ORDER BY B.idx DESC LIMIT 0, 5;<{{{><}}}>		<{{{><}}}>		<{{{><}}}>		<{{{><}}}>UPDATE books SET `status` = '0' WHERE status ='3';
+Servers\localhost\QueryHistory\8<|||>1<|||>2021-09-10 09:44:25|book|31|SELECT * FROM books WHERE status > 0
+Servers\localhost\QueryHistory\7<|||>1<|||>2021-09-10 09:45:08|book|0|SELECT * FROM books WHERE status > '0'
+Servers\localhost\QueryHistory\9<|||>1<|||>2021-09-17 00:35:10|board|0|
+Servers\localhost\sample|\MemoEditorHighlighter_idx<|||>1<|||>
