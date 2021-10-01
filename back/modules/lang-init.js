@@ -25,7 +25,7 @@ module.exports = _lang => {
 				GLOBAL: {
 					LOGO					: '도서관리시스템',
 					TAB_TITLE			: 'Express 게시판',
-					NAVI					: ['도서 등록', '도서 리스트', '로그인', '로그아웃', '회원가입']
+					NAVI					: ['도서 등록', '도서 리스트', '로그인', '로그아웃', '회원가입','마이페이지']
 				},
 				LIST: {
 					TITLE 				: '도서 목록',
@@ -68,6 +68,19 @@ module.exports = _lang => {
 					USERNAME				: '사용자이름',
 					EMAIL					: '이메일',
 				},
+				MYPAGE : {
+					TITLE 				: '회원정보 수정',
+					DESC 					: '수정할 회원정보를 아래에서 변경하세요.',
+					USERID						: '아이디',
+					PASSWD					: '패스워드',
+					PASSWD2				: '패스워드확인',
+					USERNAME				: '사용자이름',
+					EMAIL					: '이메일',
+					DOMAIN					: '인증플랫폼',
+					APIKEY					: '인증키',
+					KAKAO                   :'카카오 인증된 회원입니다.',
+					NAVER                   :'네이버 인증된 회원입니다.'
+				},
 				BT: {
 					UPDATE				: '수정',
 					DELETE				: '삭제',
@@ -76,6 +89,8 @@ module.exports = _lang => {
 					RESET					: '다시 등록',
 					JOIN                : '회원가입',
 					LOGIN                : '로그인',
+					BACK                : '뒤로가기',
+					APIKEY                  : '인증키 생성 및 변경'
 				},
 				MSG: {
 					DELETE				: '정말로 삭제하시겠습니까?'
@@ -105,7 +120,7 @@ module.exports = _lang => {
 				GLOBAL: {
 					LOGO					: 'BOOK MANAGEMENT SYSTEM',
 					TAB_TITLE			: 'Express Board',
-					NAVI: 				['Book Register', 'Book List', 'Login', 'Logout', 'Join']
+					NAVI: 				['Book Register', 'Book List', 'Login', 'Logout', 'Join', 'Mypage']
 				},
 				LIST: {
 					TITLE 				: 'Book List',
@@ -148,6 +163,17 @@ module.exports = _lang => {
 					USERNAME				: 'User name',
 					EMAIL					: 'Email',
 				},
+				MYPAGE : {
+					TITLE 				: 'User Information',
+					DESC 					: 'Change the contents of the user inforamtion to be edited below.',
+					USERID						: 'User id',
+					PASSWD					: 'Password',
+					PASSWD2				: 'Password confirm',
+					USERNAME				: 'User name',
+					EMAIL					: 'Email',
+					DOMAIN					: 'Auth Platform',
+					APIKEY					: 'API key',
+				},
 				BT: {
 					UPDATE				: 'UPDATE',
 					DELETE				: 'DELETE',
@@ -156,6 +182,10 @@ module.exports = _lang => {
 					RESET					: 'RESET',
 					JOIN					: 'JOIN',
 					LOGIN					: 'LOGIN',
+					BACK					: 'BACK',
+					APIKEY                  : 'Auth-key create/update',
+					KAKAO                   :'Authorized at Kakao',
+					NAVER                   :'Authorized at Naver'
 				},
 				MSG: {
 					DELETE				: 'Are you sure you want to delete it?'
