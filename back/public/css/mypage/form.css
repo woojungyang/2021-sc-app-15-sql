@@ -15,3 +15,5 @@
 
 .form-wrapper .valid { padding-top : .5em; color:#045da7; }
 .form-wrapper .valid.error { color:rgb(187, 8, 8); }
+
+.form-wrapper textarea {height: 200px; overflow-y: auto;}
