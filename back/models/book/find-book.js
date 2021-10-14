@@ -45,7 +45,7 @@ const findBooks = async (startIdx, listCnt) => {
 		return { success: true, books }
 	}
 	catch(err) {
-		return { success: false, err }
+		throw new Error(err)
 	}
 }
 

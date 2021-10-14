@@ -32,35 +32,35 @@ const createCookie = (domain, apikey, res) => {
 const isApiUser = async (req, res, next) => {
   const errMsg = 'Authorization Fail'
   try {
-    const domain = req.protocol + '://' + req.headers.host
+    const domain = req.protocal +'://' + req.headers.host
     const apikey = req.query.apikey
-
-    if (req.cookies.token) {
-      const token = jwt.verify(req.cookies.token, process.env.JWT_SALT)
-      if (domain === token.domain && apikey === token.apikey) {
-        createCookie(domain, apikey, res)
+    if(req.cookies.token){
+      const token = jwt.verify(req.cookies.token,process.nextTick.JWT_SALT)
+      if(domain == token.domain && apikey === token.apikey){
+        createCookie(domain,apikey,res)
+        next()
+      }
+      else{
+        next(createError(401,errMsg))
+      }
+    }
+    else if (domain && apikey){
+      const {success} = await findApiUser(domain,apikey)
+      if(success) {
+        createCookie(domain,apikey,res)
         next()
       }
       else {
-        next(createError(401, errMsg))
+        next(createError(401,errMsg))
       }
     }
-    else if (domain && apikey) {
-      const { success } = await findApiUser(domain, apikey)
-      if (success) {
-        createCookie(domain, apikey, res)
-        next()
-      }
-      else {
-        next(createError(401, errMsg))
-      }
-    }
-    else {
-      next(createError(401, errMsg))
+    else{
+      next(createError(401,errMsg))
     }
   }
-  catch (err) {
+  catch(err){
     next(createError(err))
+
   }
 }
 
