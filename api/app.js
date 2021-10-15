@@ -2,7 +2,7 @@
 require('dotenv').config()
 const express = require('express')
 const app = express()
-const cookiParser = require('cookie-parser')
+const cookieParser = require('cookie-parser')
 const cors = require('cors')
 
 
@@ -14,7 +14,7 @@ require('./modules/server-init')(app, process.env.PORT)
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(cors({ origin: true, credentials: true }))
-app.use (cookiParser())
+app.use (cookieParser())
 
 
 /*************** logger init **************/

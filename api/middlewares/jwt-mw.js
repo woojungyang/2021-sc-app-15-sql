@@ -32,8 +32,9 @@ const createCookie = (domain, apikey, res) => {
 const isApiUser = async (req, res, next) => {
   const errMsg = 'Authorization Fail'
   try {
-    const domain = req.protocal +'://' + req.headers.host
+    const domain = req.headers.origin || req.protocol + '://' + req.headers.host 
     const apikey = req.query.apikey
+
     if(req.cookies.token){
       const token = jwt.verify(req.cookies.token,process.nextTick.JWT_SALT)
       if(domain == token.domain && apikey === token.apikey){
