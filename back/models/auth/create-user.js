@@ -9,15 +9,15 @@ const createUser = async (user) => {
 		let { BCRYPT_SALT: salt, BCRYPT_ROUND: round } = process.env
 		let hashPasswd = await bcrypt.hash(passwd + salt, Number(round))
 		// 검증
-		if(isValid(user) !== true) return  false
+		if(isValid(user) !== true) return false
 		let { success } = await existUser('userid', userid)
-		if(success) return  false
+		if(success) return false
 		let { success: success2 } = await existUser('email', email)
-		if(success2) return  false
+		if(success2) return false
 
 		sql = " INSERT INTO users SET userid=?, passwd=?, username=?, email=? "
 		const [rs] = await pool.execute(sql, [userid, hashPasswd, username, email])
-		return rs.affectedRows === 1 
+		return rs.affectedRows === 1
 	}
 	catch(err) {
 		throw new Error(err)

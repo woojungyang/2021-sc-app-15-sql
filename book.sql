@@ -17,6 +17,20 @@
 CREATE DATABASE IF NOT EXISTS `book` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `book`;
 
+
+-- 테이블 book.users 구조 내보내기
+CREATE TABLE IF NOT EXISTS `users` (
+  `idx` int unsigned NOT NULL AUTO_INCREMENT,
+  `userid` varchar(24) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `passwd` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `username` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `createdAt` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `status` enum('0','1','2','3','4','5','6','7','8','9') NOT NULL DEFAULT '2' COMMENT '0:탈퇴 , 1:유효, 2:회원, 3:VIP, 9:관리자',
+  PRIMARY KEY (`idx`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
 -- 테이블 book.books 구조 내보내기
 CREATE TABLE IF NOT EXISTS `books` (
   `idx` int NOT NULL AUTO_INCREMENT COMMENT '고유번호',
@@ -73,18 +87,6 @@ INSERT INTO `sessions` (`session_id`, `expires`, `data`) VALUES
 	('kLIxUkTk7Ax3ixCdwgweOnTCDChXb-kE', 1632818968, '{"cookie":{"originalMaxAge":null,"expires":null,"secure":false,"httpOnly":true,"path":"/"},"user":{"idx":3,"userid":"woojungyang2","username":"양우정","email":"blossom1113@gmail.com","status":"2"}}'),
 	('sGJ5aED300UwrE2gL6YZFWGVUGxbOYlJ', 1632812881, '{"cookie":{"originalMaxAge":null,"expires":null,"secure":false,"httpOnly":true,"path":"/"}}');
 /*!40000 ALTER TABLE `sessions` ENABLE KEYS */;
-
--- 테이블 book.users 구조 내보내기
-CREATE TABLE IF NOT EXISTS `users` (
-  `idx` int unsigned NOT NULL AUTO_INCREMENT,
-  `userid` varchar(24) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `passwd` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `username` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `createdAt` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `status` enum('0','1','2','3','4','5','6','7','8','9') NOT NULL DEFAULT '2' COMMENT '0:탈퇴 , 1:유효, 2:회원, 3:VIP, 9:관리자',
-  PRIMARY KEY (`idx`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 -- 테이블 데이터 book.users:~0 rows (대략적) 내보내기
 DELETE FROM `users`;

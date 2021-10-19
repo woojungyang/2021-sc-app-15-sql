@@ -8,7 +8,6 @@ key = value ORDER BY key [DESC, ASC] LIMIT 0, 10
 opt.key = 'idx' => key = value
 opt.key = { fields: ['userid', 'id'], op: 'AND' }
 opt.value = ['booldook', '2'] => WHERE userid = value1 OR[AND] passwd = value2
-
 pool.execute() => INSERT, UPDATE, DELETE [{ affectedRows... },{ field info }]
 pool.execute() => SELECT [[{ id: 1...},{ id: 2...},{ id: 3...}],{ field info }]
 */
@@ -62,18 +61,14 @@ const findAllUser = async (order = 'ASC') => {
 }
 
 // GET: field, value -> 회원존재여부
-const existUser = async (key, value, update=false) => {
-	try{
-		if(update){
-
-		}
-		else {
-			const sql = ` SELECT * FROM users WHERE ${key} = ? `
-			const [rs] = await pool.execute(sql, [value])
-			return rs.length ? { success: true, idx: rs[0].idx } : { success: false, idx: null }
-		}
+// Login (아이디 중복 확인)
+const existUser = async (key, value) => {
+	try {
+		const sql = ` SELECT * FROM users WHERE ${key} = ? `
+		const [rs] = await pool.execute(sql, [value])
+		return rs.length ? { success: true, idx: rs[0].idx } : { success: false, idx: null }
 	}
-	catch(err){
+	catch(err) {
 		throw new Error(err)
 	}
 }
@@ -82,7 +77,7 @@ const existUser = async (key, value, update=false) => {
 const loginUser = async (userid, passwd) => {
 	let sql, compare
 	try {
-		sql = " SELECT * FROM users WHERE userid=? "
+		sql = " SELECT * FROM users WHERE userid=? AND status > '0' "
 		const [r] = await pool.execute(sql, [userid])
 		if(r.length === 1) {
 			compare = await bcrypt.compare(passwd + process.env.BCRYPT_SALT, r[0].passwd)
@@ -97,4 +92,24 @@ const loginUser = async (userid, passwd) => {
 	}
 }
 
-module.exports = { findUser, findAllUser, existUser, loginUser }
+// 패스워드 확인
+const findPasswd = async (key, passwd) => {
+	let sql;
+	try {
+		const field = typeof Number(key) === 'number' ? 'idx' : 'userid'
+		sql = ` SELECT passwd FROM users WHERE ${field}=? AND status > '0' `
+		const [r] = await pool.execute(sql, [key])
+		if(r.length === 1) {
+			compare = await bcrypt.compare(passwd + process.env.BCRYPT_SALT, r[0].passwd)
+			return compare 
+				? { success: true } 
+				: { success: false }
+		}
+		else return { success: false }
+	}
+	catch (err) {
+		throw new Error(err)
+	}
+}
+
+module.exports = { findUser, findAllUser, existUser, loginUser, findPasswd }
