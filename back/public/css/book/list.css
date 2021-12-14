@@ -5,7 +5,7 @@
   width: 10%;
 }
 .book-tbl th:nth-child(2) {
-  width: 15%;
+  width: 20%;
 }
 .book-tbl th:nth-child(3) {
   width: 15%;
@@ -13,13 +13,13 @@
 .book-tbl th:nth-child(4) {
 }
 .book-tbl th:nth-child(5) {
-  width: 10%;
+  width: 5%;
 }
 .book-tbl th:nth-child(6) {
-  width: 15%;
+  width: 10%;
 }
 .book-tbl th:nth-child(7) {
-  width: 10%;
+  width: 8%;
 }
 .book-tbl .content-td {
   padding: 0.25em 0;
