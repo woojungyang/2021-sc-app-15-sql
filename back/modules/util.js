@@ -5,7 +5,7 @@ const location = (src) => path.join(__dirname, '../', src);
 
 const cutTail = (str, len = 12) =>
   str.length > len ? str.substr(0, len) + ' ...' : str;
-const cutTail2 = (str, len = 25) =>
+const cutTail2 = (str, len = 40) =>
   str.length > len ? str.substr(0, len) + ' ...' : str;
 
 const chgStatus = (status) => {
